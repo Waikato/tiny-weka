@@ -3,6 +3,7 @@ import logging
 import shutil
 import subprocess
 import traceback
+from remove_gpl import contains_gpl, remove_gpl
 
 SVN_PREFIX = "/trunk/weka/"
 BLACKLISTED_FILES=[
@@ -209,7 +210,6 @@ MODIFIED_FILES = [
     "/trunk/weka/src/main/java/weka/core/Utils.java",
 ]
 
-
 POM_VERSION_TAG = "<!-- tiny-weka-version -->"
 """ Comment tag in pom.xml to identify the version """
 
@@ -294,16 +294,17 @@ def requires_post_processing(source):
     :return: True if the file requires post-processing
     :rtype: bool
     """
-    result = False
     with open(source, "r") as source_file:
         lines = source_file.readlines()
-    for line in lines:
-        if "@ProgrammaticProperty" in line:
-            result = True
-            break
-        if "@FilePropertyMetadata" in line:
-            result = True
-            break
+    result = contains_gpl(lines)
+    if not result:
+        for line in lines:
+            if "@ProgrammaticProperty" in line:
+                result = True
+                break
+            if "@FilePropertyMetadata" in line:
+                result = True
+                break
     return result
 
 
@@ -324,6 +325,8 @@ def post_process(source, target):
 
     filtered = []
     is_open = False
+    lines = remove_gpl(lines)
+
     for i in range(len(lines)):
         if is_open:
             if lines[i].strip().endswith(")"):
@@ -344,6 +347,7 @@ def post_process(source, target):
             else:
                 is_open = True
                 continue
+
         filtered.append(lines[i])
 
     with open(target, "w") as target_file:
@@ -421,7 +425,7 @@ def process_paths(weka, paths, dry_run, verbose):
                 else:
                     shutil.copyfile(source, target)
             except:
-                logger.severe("Failed to copy %s to %s\n%s" % (source, target, traceback.format_exc()))
+                logger.error("Failed to copy %s to %s\n%s" % (source, target, traceback.format_exc()))
 
     return result
 
@@ -498,7 +502,6 @@ def update(weka, revision, svn=None, dry_run=False, verbose=False):
     if not dry_run:
         update_pom(revision_head)
         update_readme(revision_head)
-        # TODO replace GPL with MIT
         rev_filename = "./update.rev"
         logger.info("Storing revision information in: %s" % rev_filename)
         with open(rev_filename, "w") as ref_file:
