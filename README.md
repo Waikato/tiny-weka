@@ -109,6 +109,28 @@ python3 update.py \
   to be added to the `MODIFIED_FILES` list. If such a file has been updated
   in the subversion repository, a warning is being output.
 
+
+### Remove GPL
+
+The `remove_gpl.py` script can be used to remove the GPL preamble from any
+Java file that still contains it, e.g., when manually copying over files. 
+
+```
+usage: remove_gpl.py [-h] -d, --dir DIR [-r, --recursive] [-n, --dry_run]
+                     [-v, --verbose]
+
+Removes the GPL preamble from Java source code files.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  -d, --dir DIR    the directory with source code files to process
+  -r, --recursive  whether to search for source code files recursively
+  -n, --dry_run    whether to perform a dry run, i.e., only simulating the
+                   removal
+  -v, --verbose    whether to be verbose with the output
+```
+
+
 ### Commit
 
 * Once compilation and unit tests work, commit all changes
