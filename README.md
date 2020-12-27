@@ -3,6 +3,9 @@ Stripped down version of [Weka](https://www.cs.waikato.ac.nz/ml/weka/) 3.9.x bra
 that just contains the bare minimum API without any package manager, PMML, XML or user 
 interface related code.
 
+In contrast to the regular Weka source code, which is released under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt), 
+this code is released under the [MIT](LICENSE) license.
+
 ## Code base
 
 The code base of *tiny-weka* is synced (manually) with Weka's subversion repository, 
