@@ -199,7 +199,7 @@ public class ClusterEvaluation implements Serializable, RevisionHandler {
    * EM.
    */
   public ClusterEvaluation() {
-    setClusterer(new Dummy());
+    setClusterer(null);
     m_clusteringResults = new StringBuffer();
     m_clusterAssignments = null;
   }
