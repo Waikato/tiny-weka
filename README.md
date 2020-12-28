@@ -56,7 +56,7 @@ As for adding *tiny-weka* as a dependency to your project, add the following to 
 
 ```xml
 <dependency>
-  <groupId>com.github.fracpete</groupId>
+  <groupId>nz.ac.waikato.cms.weka</groupId>
   <artifactId>tiny-weka</artifactId>
   <version>3.9.15754-SNAPSHOT</version><!-- tiny-weka-version -->
 </dependency>
@@ -68,9 +68,9 @@ Add the following dependency to your `pom.xml` to use the latest [release](https
 
 ```xml
 <dependency>
-  <groupId>com.github.fracpete</groupId>
+  <groupId>nz.ac.waikato.cms.weka</groupId>
   <artifactId>tiny-weka</artifactId>
-  <version>3.9.15580</version>
+  <version>3.9.15754</version>
 </dependency>
 ```
 
