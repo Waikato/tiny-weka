@@ -1,10 +1,16 @@
 # tiny-weka
-Stripped down version of [Weka](https://www.cs.waikato.ac.nz/ml/weka/) 3.9.x branch (HEAD) 
+Stripped down version of [WEKA](https://www.cs.waikato.ac.nz/ml/weka/) 3.9.x branch (HEAD) 
 that just contains the bare minimum API without any package manager, PMML, XML or user 
 interface related code.
 
 In contrast to the regular Weka source code, which is released under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt), 
-this code is released under the [MIT](LICENSE) license.
+this code is released under the [MIT](LICENSE) license. It is aimed at commercial
+applications that require licensing only a small subset of WEKA's algorithms.
+
+For more information on obtaining a commercial license for WEKA algorithms see
+the following wiki FAQ:
+
+https://waikato.github.io/weka-wiki/faqs/commercial_applications/
 
 ## Code base
 
