@@ -15,3 +15,6 @@ buildNumber.properties
 *.iml
 .idea/
 venv/
+__pycache__/
+*.pyc
+
