@@ -24,43 +24,12 @@ r15754   # svn revision
 
 ## Maven
 
-Snapshots and releases use the following versioning system:
+Releases use the following versioning system:
 ```
 X.Y.Z
 ```
 * `X.Y` - the Weka major/minor release version
 * `Z` - the Weka subversion repository revision that the code base was synced to
-
-### Snapshots
-
-Nightly snapshots get pushed out to [Sonatype's snapshot repository](https://oss.sonatype.org/content/repositories/snapshots/com/github/fracpete/tiny-weka/). In order to use these, you need
-to add the configuration for this snapshot repository to your `pom.xml`:
-
-```xml 
-  <repositories>
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-```
-
-As for adding *tiny-weka* as a dependency to your project, add the following to your `pom.xml`:
-
-```xml
-<dependency>
-  <groupId>nz.ac.waikato.cms.weka</groupId>
-  <artifactId>tiny-weka</artifactId>
-  <version>3.9.15754-SNAPSHOT</version><!-- tiny-weka-version -->
-</dependency>
-``` 
 
 ### Releases
 
