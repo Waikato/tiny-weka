@@ -187,6 +187,7 @@ BLACKLISTED_PATHS=[
     "/trunk/weka/src/main/java/weka/filters/supervised",
     "/trunk/weka/src/main/java/weka/filters/unsupervised",
     "/trunk/weka/src/main/java/weka/knowledgeflow",
+    "/trunk/weka/src/main/java/weka/gui",
     "/trunk/weka/src/main/scripts",
     "/trunk/weka/src/test",
 ]
