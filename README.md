@@ -19,7 +19,7 @@ The code base of *tiny-weka* is synced (manually) with Weka's subversion reposit
 revision:
 
 ```
-r15754   # svn revision
+r15955   # svn revision
 ```
 
 ## Maven
