@@ -12,6 +12,13 @@ the following wiki FAQ:
 
 https://waikato.github.io/weka-wiki/faqs/commercial_applications/
 
+## Maven template
+
+The following repo contains a Maven template using tiny-weka:
+
+https://github.com/Waikato/tiny-weka-maven-template
+
+
 ## Code base
 
 The code base of *tiny-weka* is synced (manually) with Weka's subversion repository, 
