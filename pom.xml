@@ -5,7 +5,7 @@
 
   <groupId>nz.ac.waikato.cms.weka</groupId>
   <artifactId>tiny-weka</artifactId>
-  <version>3.9.3cbb52f21</version><!-- tiny-weka-version -->
+  <version>3.9.7-SNAPSHOT</version><!-- tiny-weka-version -->
   <packaging>jar</packaging>
 
   <name>tiny-weka</name>
@@ -45,7 +45,7 @@
     <connection>scm:git:ssh://git@github.com/Waikato/tiny-weka</connection>
     <developerConnection>scm:git:ssh://git@github.com/Waikato/tiny-weka</developerConnection>
     <url>https://github.com/Waikato/tiny-weka</url>
-    <tag>tiny-weka-3.9.3cbb52f21</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <profiles>
