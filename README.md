@@ -21,7 +21,7 @@ https://github.com/Waikato/tiny-weka-maven-template
 
 ## Code base
 
-The code base of *tiny-weka* is synced (manually) with Weka's subversion repository, 
+The code base of *tiny-weka* is synced (manually) with Weka's git repository, 
 [trunk branch](https://git.cms.waikato.ac.nz/weka/weka) up to the following 
 revision:
 
@@ -36,7 +36,7 @@ Releases use the following versioning system:
 X.Y.Z
 ```
 * `X.Y` - the Weka major/minor release version
-* `Z` - the Weka subversion repository revision that the code base was synced to
+* `Z` - the Weka subversion repository revision or git commit hash that the code base was synced to
 
 ### Releases
 
@@ -46,11 +46,12 @@ Add the following dependency to your `pom.xml` to use the latest [release](https
 <dependency>
   <groupId>nz.ac.waikato.cms.weka</groupId>
   <artifactId>tiny-weka</artifactId>
-  <version>3.9.15955</version>
+  <version>3.9.3cbb52f21</version>
 </dependency>
 ```
 
 Notes:
+* `3.9.3cbb52f21` - post 3.9.6 release, as of 2024-10-04
 * `3.9.15955` - equivalent to 3.9.6 release
 * `3.9.15754` - equivalent to 3.9.5 release
 
@@ -95,7 +96,7 @@ python3 update.py \
   `BLACKLISTED_PATHS`
 * Files that were manually modified (e.g., removing package manager code) need 
   to be added to the `MODIFIED_FILES` list. If such a file has been updated
-  in the subversion repository, a warning is being output.
+  in the git repository, a warning is being output.
 
 
 ### Remove GPL
