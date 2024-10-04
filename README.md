@@ -22,11 +22,11 @@ https://github.com/Waikato/tiny-weka-maven-template
 ## Code base
 
 The code base of *tiny-weka* is synced (manually) with Weka's subversion repository, 
-[trunk branch](https://svn.cms.waikato.ac.nz/svn/weka/trunk/) up to the following 
+[trunk branch](https://git.cms.waikato.ac.nz/weka/weka) up to the following 
 revision:
 
 ```
-r15955   # svn revision
+31f46b79   # git commit hash
 ```
 
 ## Maven
@@ -57,23 +57,22 @@ Notes:
 ## Updating
 
 ### Update files
-The code base can be synced with Weka's subversion branch using the `update.py`
+The code base can be synced with Weka's git repository using the `update.py`
 Python script.
 
 ```
-usage: update.py [-h] -w, --weka DIR -r, --revision REV [-s, --svn EXECUTABLE]
+usage: update.py [-h] -w, --weka DIR -c, --commit HASH [-g, --git EXECUTABLE]
                  [-n, --dry_run] [-v, --verbose]
 
-Analyzes the svn log from the specified revision on and then updates the code
-accordingly. It stores the start/end svn revision in 'update.rev' after
-execution.
+Analyzes the git log from the specified revision on and then updates the code
+accordingly. It stores the start/end git hash in 'update.rev' after execution.
 
 optional arguments:
   -h, --help            show this help message and exit
   -w, --weka DIR        the directory with the Weka subversion repository
                         (HEAD)
-  -r, --revision REV    the svn revision to start from
-  -s, --svn EXECUTABLE  the svn executable to use if not on the path
+  -c, --commit HASH     the git hash to start from
+  -g, --git EXECUTABLE  the git executable to use if not on the path
   -n, --dry_run         whether to perform a dry run, i.e., only simulating
                         the update
   -v, --verbose         whether to be verbose with the output
@@ -84,7 +83,7 @@ Example:
 ```commandline
 python3 update.py \
   -w /some/where/weka-HEAD/ \
-  -r 15559 \ 
+  -c 87a3264c \ 
   -v
 ```
 
@@ -105,18 +104,22 @@ The `remove_gpl.py` script can be used to remove the GPL preamble from any
 Java file that still contains it, e.g., when manually copying over files. 
 
 ```
-usage: remove_gpl.py [-h] -d, --dir DIR [-r, --recursive] [-n, --dry_run]
-                     [-v, --verbose]
+usage: update.py [-h] -w, --weka DIR -c, --commit HASH [-g, --git EXECUTABLE]
+                 [-n, --dry_run] [-v, --verbose]
 
-Removes the GPL preamble from Java source code files.
+Analyzes the git log from the specified commit hash on and then updates the
+code accordingly. It stores the start/end git commit hash in 'update.rev'
+after execution.
 
 optional arguments:
-  -h, --help       show this help message and exit
-  -d, --dir DIR    the directory with source code files to process
-  -r, --recursive  whether to search for source code files recursively
-  -n, --dry_run    whether to perform a dry run, i.e., only simulating the
-                   removal
-  -v, --verbose    whether to be verbose with the output
+  -h, --help            show this help message and exit
+  -w, --weka DIR        the directory with the Weka subversion repository
+                        (HEAD)
+  -c, --commit HASH     the git commit hash to start from
+  -g, --git EXECUTABLE  the git executable to use if not on the path
+  -n, --dry_run         whether to perform a dry run, i.e., only simulating
+                        the update
+  -v, --verbose         whether to be verbose with the output
 ```
 
 
