@@ -26,7 +26,7 @@ The code base of *tiny-weka* is synced (manually) with Weka's subversion reposit
 revision:
 
 ```
-31f46b79   # git commit hash
+r3cbb52f21   # git commit hash
 ```
 
 ## Maven
@@ -64,14 +64,14 @@ Python script.
 usage: update.py [-h] -w, --weka DIR -c, --commit HASH [-g, --git EXECUTABLE]
                  [-n, --dry_run] [-v, --verbose]
 
-Analyzes the git log from the specified revision on and then updates the code
-accordingly. It stores the start/end git hash in 'update.rev' after execution.
+Analyzes the git log from the specified commit hash on and then updates the
+code accordingly. It stores the start/end git commit hash in 'update.rev'
+after execution.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -w, --weka DIR        the directory with the Weka subversion repository
-                        (HEAD)
-  -c, --commit HASH     the git hash to start from
+  -w, --weka DIR        the directory with the Weka git clone (HEAD)
+  -c, --commit HASH     the git commit hash to start from
   -g, --git EXECUTABLE  the git executable to use if not on the path
   -n, --dry_run         whether to perform a dry run, i.e., only simulating
                         the update
@@ -80,7 +80,7 @@ optional arguments:
 
 Example:
 
-```commandline
+```bash
 python3 update.py \
   -w /some/where/weka-HEAD/ \
   -c 87a3264c \ 
@@ -104,22 +104,18 @@ The `remove_gpl.py` script can be used to remove the GPL preamble from any
 Java file that still contains it, e.g., when manually copying over files. 
 
 ```
-usage: update.py [-h] -w, --weka DIR -c, --commit HASH [-g, --git EXECUTABLE]
-                 [-n, --dry_run] [-v, --verbose]
+usage: remove_gpl.py [-h] -d, --dir DIR [-r, --recursive] [-n, --dry_run]
+                     [-v, --verbose]
 
-Analyzes the git log from the specified commit hash on and then updates the
-code accordingly. It stores the start/end git commit hash in 'update.rev'
-after execution.
+Removes the GPL preamble from Java source code files.
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -w, --weka DIR        the directory with the Weka subversion repository
-                        (HEAD)
-  -c, --commit HASH     the git commit hash to start from
-  -g, --git EXECUTABLE  the git executable to use if not on the path
-  -n, --dry_run         whether to perform a dry run, i.e., only simulating
-                        the update
-  -v, --verbose         whether to be verbose with the output
+  -h, --help       show this help message and exit
+  -d, --dir DIR    the directory with source code files to process
+  -r, --recursive  whether to search for source code files recursively
+  -n, --dry_run    whether to perform a dry run, i.e., only simulating the
+                   removal
+  -v, --verbose    whether to be verbose with the output
 ```
 
 

@@ -5,7 +5,7 @@
 
   <groupId>nz.ac.waikato.cms.weka</groupId>
   <artifactId>tiny-weka</artifactId>
-  <version>3.9.15956-SNAPSHOT</version><!-- tiny-weka-version -->
+  <version>3.9.3cbb52f21-SNAPSHOT</version><!-- tiny-weka-version -->
   <packaging>jar</packaging>
 
   <name>tiny-weka</name>
