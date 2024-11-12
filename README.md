@@ -46,11 +46,12 @@ Add the following dependency to your `pom.xml` to use the latest [release](https
 <dependency>
   <groupId>nz.ac.waikato.cms.weka</groupId>
   <artifactId>tiny-weka</artifactId>
-  <version>3.9.3cbb52f21</version>
+  <version>3.9.3cbb52f21-2</version>
 </dependency>
 ```
 
 Notes:
+* `3.9.3cbb52f21-2` - post 3.9.6 release, as of 2024-10-04
 * `3.9.3cbb52f21` - post 3.9.6 release, as of 2024-10-04
 * `3.9.15955` - equivalent to 3.9.6 release
 * `3.9.15754` - equivalent to 3.9.5 release
